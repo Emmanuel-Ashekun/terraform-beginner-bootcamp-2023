@@ -41,7 +41,8 @@ HOME_URL="https://www.ubuntu.com/"
 SUPPORT_URL="https://help.ubuntu.com/"
 BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
 PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
-UBUNTU_CODENAME=jammy```
+UBUNTU_CODENAME=jammy
+```
 
 ### Refactoring into Bash Scripts
 
@@ -54,3 +55,59 @@ This bash script is located here : [./bin/install_terraform_cli](./bin/install_t
 https://en.wikipedia.org/wiki/Shebang_(Unix)
 https://en.wikipedia.org/wiki/Chmod
 https://www.gitpod.io/docs/configure/workspaces/workspace-lifecycle
+
+### Github Lifecycle (Before, Init, Command)
+
+We need to be careful when using Init because it will not rerun if we restart an existing workspace
+
+https://www.gitpod.io/docs/configure/workspaces/tasks
+
+
+### Working Env Var
+
+#### env command
+
+We can list out all environment varibles (Env vars) using thr `env` command.
+
+We can filter specific env vars using grep eg. `env | grep AWS_`
+
+#### Setting and Unsetting Env Vars
+
+In the terminal, we can set using `export HELLO= 'world'`
+
+In the terminal, we can unset using `unset HELLO`
+
+We can set an env var temporarily when running a command eg
+
+```sh
+HELLO= 'world' ./bin/print_message
+```
+Within a bash script we can set env var without writing export eg.
+
+```sh
+#!/usr/bin/env bash
+HELLO='world'
+
+echo $HELLO
+```
+
+## PRinting Vars
+using echo eg. `echo $HElLO`
+
+#### Scoping of Env Vars
+
+When you open new terminals in vs code, it will not be aware of env var in previous terminal.
+
+If you want env vars to persist, you need to set env vars in bash profile. eg `.bash_profile`
+
+
+#### Persisting Env Vars in Gitpod
+
+We can persist env vars in gitpod by storing them in Gitpod Secrets Storage
+
+```sh
+gp env HELLO='world'
+```
+All future workspaces will set the new env vars for all bash tertminals opened in the workspaces
+
+you can also set env vars in the `.gitpod.yml` but this can only contain non sensitive env vars for security purposes.

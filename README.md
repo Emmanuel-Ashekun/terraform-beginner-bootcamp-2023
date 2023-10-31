@@ -15,3 +15,42 @@ Given a version number MAJOR.MINOR.PATCH, increment the:
 - MINOR version when you add functionality in a backward compatible manner
 - PATCH version when you make backward compatible bug fixes
 - Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
+
+## Install Terraform CLI
+Installation instruction has been updated. So we needed to refer to the latest Install CLI instructions via Terraform Documentation to change the scripting for install
+
+[Install Terraform CLI](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
+
+### Considerations for Linux Distribution
+
+This project is built against Ubuntu... 
+Check to see if there are any dependencies relating to your distribution
+
+Example:
+
+```
+$ cat /etc/os-release 
+PRETTY_NAME="Ubuntu 22.04.3 LTS"
+NAME="Ubuntu"
+VERSION_ID="22.04"
+VERSION="22.04.3 LTS (Jammy Jellyfish)"
+VERSION_CODENAME=jammy
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=jammy```
+
+### Refactoring into Bash Scripts
+
+While fixing the terraform cli, we notice that bash scripts step have a lot more code. So we decided to create a bash script to install the Terraform CLI
+
+This bash script is located here : [./bin/install_terraform_cli](./bin/install_terraform_cli)
+- This will keep the Gitpod Task File ([.gitpod.yml](.gitpod.yml)) Tidy
+- This allows easier debugging and execution
+- Better portablity for projects that need to install terraform cli.
+https://en.wikipedia.org/wiki/Shebang_(Unix)
+https://en.wikipedia.org/wiki/Chmod
+https://www.gitpod.io/docs/configure/workspaces/workspace-lifecycle

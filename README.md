@@ -1,6 +1,6 @@
 # Terraform Beginner Bootcamp 2023
 
-## SEmantic Versioning
+## Semantic Versioning :mage:s
 
 This project is going to utilize semantic versioning for its tagging.
 
@@ -8,7 +8,7 @@ https://semver.org
 
 The general format:
 
-**MAJOR.MINOR.PATCH**, EG `1.0.1`
+**MAJOR.MINOR.PATCH**, EG `1.0.1` 
 Given a version number MAJOR.MINOR.PATCH, increment the:
 
 - MAJOR version when you make incompatible API changes

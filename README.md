@@ -111,3 +111,5 @@ gp env HELLO='world'
 All future workspaces will set the new env vars for all bash tertminals opened in the workspaces
 
 you can also set env vars in the `.gitpod.yml` but this can only contain non sensitive env vars for security purposes.
+
+Need to generate aws iam users to generate user cred

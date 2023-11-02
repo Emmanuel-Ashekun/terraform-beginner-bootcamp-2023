@@ -147,6 +147,13 @@ Generate a changeset, about the current state and the changes that will be made 
 
 `terraform apply --auto-approve`
 
+#### Terraform Destroy
+
+`terraform destroy`
+This will destroy resources.
+
+`terraform destroy --auto-approve` will destroy without confirmation 
+
 ## Terraform lock File
 
 `.terraform.lock.hcl` contains the configuration/ versioning for the providers or modules that should be used in the project

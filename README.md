@@ -113,3 +113,55 @@ All future workspaces will set the new env vars for all bash tertminals opened i
 you can also set env vars in the `.gitpod.yml` but this can only contain non sensitive env vars for security purposes.
 
 Need to generate aws iam users to generate user cred
+
+
+
+## Terraform Basics
+
+### Terraform Registry
+
+Trraform sources their providers and modules from the terraform registry which is located at [registry.terraform.io](https://registry.terraform.io)
+
+- **Provider** is an interface/Plugin to interact with the API or cloud provider eg. `AWS`
+
+- **Modules** are a way to make large ammount of terraform code modular, break it into portable parts that can be shared and easily edited
+
+### Terraform Console
+
+We can see a list of all the terraform commands by simply typing `terraform`
+
+#### Terraform Init
+
+At the start of a new project, we run `terraform init` to download the related binary for the provider that will be used for the project
+
+['Random' Terraform Provider](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string)
+
+#### Terraform Plan
+
+`terraform plan` will
+Generate a changeset, about the current state and the changes that will be made to the infrastructure
+
+#### Terraform Apply
+
+`terraform apply` will apply said changes in the plan to the resource/infrastructure. To automate, 
+
+`terraform apply --auto-approve`
+
+## Terraform lock File
+
+`.terraform.lock.hcl` contains the configuration/ versioning for the providers or modules that should be used in the project
+
+The terraform lockn file should be committed to your version control system (VSC) eg. Github
+
+### Terraform State Files
+
+`.terraform.tfstate` contains the current state of your infrastructure.
+
+This file should not be **committed** to your VSC
+
+This file containss sensitive data. If you loose this file, you loose knowing the state of your infrastructure
+
+`.terraform.tfstate.backup` is the previous state file before the current
+
+### Terraform Directory
+`.terraform` directory contains binaries of terraform providers.

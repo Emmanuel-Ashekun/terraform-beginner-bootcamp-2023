@@ -172,3 +172,7 @@ This file containss sensitive data. If you loose this file, you loose knowing th
 
 ### Terraform Directory
 `.terraform` directory contains binaries of terraform providers.
+
+## TERRAFORM CLOUD
+
+We have automated the process of manual token for terraform cloud implementation using the bash script [bin/generate_tfrc_credentials](bin/generate_tfrc_credentials)

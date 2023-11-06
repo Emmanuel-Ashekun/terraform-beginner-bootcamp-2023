@@ -7,20 +7,7 @@
     - [Considerations for Linux Distribution](#considerations-for-linux-distribution)
     - [Refactoring into Bash Scripts](#refactoring-into-bash-scripts)
 - [Github Lifecycle (Before, Init, Command)](#github-lifecycle-before-init-command)
-- [Working Env Var](#working-env-var)
-    - [env command](#env-command)
-    - [Setting and Unsetting Env Vars](#setting-and-unsetting-env-vars)
-    - [Scoping of Env Vars](#scoping-of-env-vars)
-    - [Persisting Env Vars in Gitpod](#persisting-env-vars-in-gitpod)
-- [Terraform Basics](#terraform-basics)
-    - [Terraform Registry](#terraform-registry)
-    - [Terraform Console](#terraform-console)
-- [Terraform statefile](#terraform-state-files)
-    - [Terrform lock file](#terraform-lock-file)
-    - [Terraform Directory](#terraform-directory)
-- [Terraform Cloud](#terraform-cloud)
-
-
+- []()
 
 
 

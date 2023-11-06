@@ -1,32 +1,30 @@
 # Terraform Beginner Bootcamp 2023
 
-## Table of Content
+- [Terraform Beginner Bootcamp 2023](#terraform-beginner-bootcamp-2023)
+  * [Semantic Versioning](#semantic-versioning)
+  * [Install Terraform CLI](#install-terraform-cli)
+    + [Considerations for Linux Distribution](#considerations-for-linux-distribution)
+    + [Refactoring into Bash Scripts](#refactoring-into-bash-scripts)
+    + [Github Lifecycle (Before, Init, Command)](#github-lifecycle-before-init-command)
+    + [Working Env Var](#working-env-var)
+      - [env command](#env-command)
+      - [Setting and Unsetting Env Vars](#setting-and-unsetting-env-vars)
+  * [PRinting Vars](#printing-vars)
+      - [Scoping of Env Vars](#scoping-of-env-vars)
+      - [Persisting Env Vars in Gitpod](#persisting-env-vars-in-gitpod)
+  * [Terraform Basics](#terraform-basics)
+    + [Terraform Registry](#terraform-registry)
+    + [Terraform Console](#terraform-console)
+      - [Terraform Init](#terraform-init)
+      - [Terraform Plan](#terraform-plan)
+      - [Terraform Apply](#terraform-apply)
+      - [Terraform Destroy](#terraform-destroy)
+  * [Terraform lock File](#terraform-lock-file)
+    + [Terraform State Files](#terraform-state-files)
+    + [Terraform Directory](#terraform-directory)
+  * [TERRAFORM CLOUD](#terraform-cloud)
 
-- [Semantic Versioning](#semantic-versioning)
-- [Install Terraform CLI](#install-terraform-cli)
-    - [Considerations for Linux Distribution](#considerations-for-linux-distribution)
-    - [Refactoring into Bash Scripts](#refactoring-into-bash-scripts)
-- [Github Lifecycle (Before, Init, Command)](#github-lifecycle-before-init-command)
-- [Working Env Var](#working-env-var)
-    - [env command](#env-command)
-    - [Setting and Unsetting Env Vars](#setting-and-unsetting-env-vars)
-    - [Scoping of Env Vars](#scoping-of-env-vars)
-    - [Persisting Env Vars in Gitpod](#persisting-env-vars-in-gitpod)
-- [Terraform Basics](#terraform-basics)
-    - [Terraform Registry](#terraform-registry)
-    - [Terraform Console](#terraform-console)
-- [Terraform statefile](#terraform-state-files)
-    - [Terrform lock file](#terraform-lock-file)
-    - [Terraform Directory](#terraform-directory)
-- [Terraform Cloud](#terraform-cloud)
-
-
-
-
-
-
-
-
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 
 ## Semantic Versioning 

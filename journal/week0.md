@@ -4,7 +4,7 @@
 - [Install Terraform CLI](#install-terraform-cli)
   * [Considerations for Linux Distribution](#considerations-for-linux-distribution)
   * [Refactoring into Bash Scripts](#refactoring-into-bash-scripts)
-  * [Github Lifecycle (Before, Init, Command)](#github-lifecycle--before--init--command-)
+  * [Gitpod Lifecycle (Before, Init, Command)](#github-lifecycle--before--init--command-)
   * [Working Env Var](#working-env-var)
     + [env command](#env-command)
     + [Setting and Unsetting Env Vars](#setting-and-unsetting-env-vars)
@@ -80,14 +80,14 @@ https://en.wikipedia.org/wiki/Shebang_(Unix)
 https://en.wikipedia.org/wiki/Chmod
 https://www.gitpod.io/docs/configure/workspaces/workspace-lifecycle
 
-### Github Lifecycle (Before, Init, Command)
+## Gitpod Lifecycle (Before, Init, Command)
 
 We need to be careful when using Init because it will not rerun if we restart an existing workspace
 
 https://www.gitpod.io/docs/configure/workspaces/tasks
 
 
-### Working Env Var
+## Working Env Var
 
 #### env command
 
@@ -115,17 +115,17 @@ HELLO='world'
 echo $HELLO
 ```
 
-## PRinting Vars
+### Pinting Vars
 using echo eg. `echo $HElLO`
 
-#### Scoping of Env Vars
+### Scoping of Env Vars
 
 When you open new terminals in vs code, it will not be aware of env var in previous terminal.
 
 If you want env vars to persist, you need to set env vars in bash profile. eg `.bash_profile`
 
 
-#### Persisting Env Vars in Gitpod
+### Persisting Env Vars in Gitpod
 
 We can persist env vars in gitpod by storing them in Gitpod Secrets Storage
 

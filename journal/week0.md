@@ -8,7 +8,7 @@
   * [Working Env Var](#working-env-var)
     + [env command](#env-command)
     + [Setting and Unsetting Env Vars](#setting-and-unsetting-env-vars)
-- [PRinting Vars](#printing-vars)
+- [Printing Vars](#printing-vars)
     + [Scoping of Env Vars](#scoping-of-env-vars)
     + [Persisting Env Vars in Gitpod](#persisting-env-vars-in-gitpod)
 - [Terraform Basics](#terraform-basics)

@@ -2,3 +2,8 @@ output "bucket_name" {
     description = "bucketname for our static website"
     value = module.terrahouse_aws
 }
+
+output "s3_website_endopint" {
+    value = module.terrahouse_aws.website_endopint
+    description = "S3 static website hosting endpoint"
+}

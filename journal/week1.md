@@ -78,7 +78,7 @@ It is reccomended to place modules in a modules directory when developing module
 We can pass input variables to our module.
 the module has to declare the terraform variables in its own variables.tf
 
-```tf
+```t
 module "terrahouse_aws" {
   source = "./modules/terrahouse_aws"
   }
@@ -90,12 +90,44 @@ Using the source we can import the module from diffrent places eg:
 - locally,
 - github, 
 - terraform registry
-```tf
+```t
 module "terrahouse_aws" {
   source = "./modules/terrahouse_aws"
   user_uuid = var.user_uuid
   bucket_name = var.bucket_name
   }
 ```
+
+## Working with files in Terraform
+
+### Fileexists function
+
+[fileexist_documentation](https://developer.hashicorp.com/terraform/language/functions/fileexists)
+
+This is a built in terraform function to check the existence of a file. e.g:
+```t
+  validation {
+    condition     = fileexists(var.index_html_filepath)
+  }
+```
+
+### Path Variable
+
+In Terraform, there is a special variable called path that allows us to reference local paths:
+- path.module = get the path for the current module
+- path.root = get the path for the root module
+
+[Special Path Variable](https://developer.hashicorp.com/terraform/language/expressions/references#filesystem-and-workspace-info)
+
+
+```t
+resource "aws_s3_object" "index_html" {
+  bucket = aws_s3_bucket.website_bucket.bucket
+  key    = "index.html"
+  source = "${path.root}/modules/punlic/index.html"
+}
+   ```
+
+
 
 [module sources](https://developer.hashicorp.com/terraform/language/modules/sources#github)

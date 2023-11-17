@@ -129,5 +129,51 @@ resource "aws_s3_object" "index_html" {
    ```
 
 
+### Terraform Data Sources
+
+This allows us to source data from cloud resources.
+
+This is useful when we want to reference cloud resources without importing them
+
+[Data Sources](https://developer.hashicorp.com/terraform/language/data-sources)
+
+e.g
+```t
+data "aws_ami" "example" {
+  most_recent = true
+
+  owners = ["self"]
+  tags = {
+    Name   = "app-server"
+    Tested = "true"
+  }
+}
+```
+
+### Terraform Locals values
+
+Locals allow us to define local variables.
+It can be very useful when we want to transfer data into another format an have ot referenced as a variable
+
+[locals values](https://developer.hashicorp.com/terraform/language/values/locals)
+
+```t
+locals {
+  s3_origin_id = "Mys3origin"
+}
+```
+### Working with JSON
+
+[jsonencode](https://developer.hashicorp.com/terraform/language/functions/jsonencode) 
+
+we use the jsonencode to create json policy inline in the hcl (terraform language is hcl)
+
+```t
+> jsonencode({"hello"="world"})
+{"hello":"world"}
+
+```
+
 
 [module sources](https://developer.hashicorp.com/terraform/language/modules/sources#github)
+

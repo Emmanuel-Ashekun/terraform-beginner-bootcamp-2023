@@ -11,3 +11,8 @@ output "s3_website_endopint" {
 output "content_version" {
   value = var.content_version
 }
+
+output "cloudfront_url" {
+  description = "the Cloudfront Distribution Name"
+  value = module.terrahouse_aws.cloudfront_url
+}

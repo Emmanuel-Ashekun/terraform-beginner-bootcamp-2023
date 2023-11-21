@@ -191,3 +191,49 @@ The terraform_data resource is useful for storing values which need to follow a 
 
 
 [Terraform data](https://developer.hashicorp.com/terraform/language/resources/terraform-data)
+## Provisioners
+Provisioners allow you to execute commands on compute instances e.g a AWS CLI command
+
+They are not recommended for use by hashicorp because configuration managment tools like ansible are a better fit, but the functionality exists.
+
+### Local-exec
+
+```t
+resource "aws_instance" "web" {
+  # ...
+
+  provisioner "local-exec" {
+    command = "echo The server's IP address is ${self.private_ip}"
+  }
+}
+```
+
+this will execute a command on the machine running the terraform command eg. plan apply
+
+### Remote-exec
+
+```t
+resource "aws_instance" "web" {
+  # ...
+
+  # Establishes connection to be used by all
+  # generic remote provisioners (i.e. file/remote-exec)
+  connection {
+    type     = "ssh"
+    user     = "root"
+    password = var.root_password
+    host     = self.public_ip
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "puppet apply",
+      "consul join ${aws_instance.web.private_ip}",
+    ]
+  }
+}
+```
+
+This will execute commands on a machine which you target. You will need to provide credenitials such as ssh to get into the machine
+
+[Provisioners](https://developer.hashicorp.com/terraform/language/resources/provisioners/syntax)

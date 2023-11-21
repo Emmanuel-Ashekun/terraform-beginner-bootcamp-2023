@@ -9,3 +9,7 @@ output "website_endopint" {
 output "content_version" {
   value = terraform_data.content_version.output
 }
+
+output "cloudfront_url" {
+  value = aws_cloudfront_distribution.default.domain_name
+}

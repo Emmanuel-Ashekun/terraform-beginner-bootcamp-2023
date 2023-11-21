@@ -177,3 +177,17 @@ we use the jsonencode to create json policy inline in the hcl (terraform languag
 
 [module sources](https://developer.hashicorp.com/terraform/language/modules/sources#github)
 
+
+### Changing the Lifecycle of Resources
+
+[Meta Argument Lifecycle](https://developer.hashicorp.com/terraform/language/meta-arguments/lifecycle)
+
+### Terraform Data
+
+The terraform_data implements the standard resource lifecycle, but does not directly take any other actions. You can use the terraform_data resource without requiring or configuring a provider. It is always available through a built-in provider with the source address terraform.io/builtin/terraform.
+
+The terraform_data resource is useful for storing values which need to follow a manage resource lifecycle, and for triggering provisioners when there is no other logical managed resource in which to place them.
+
+
+
+[Terraform data](https://developer.hashicorp.com/terraform/language/resources/terraform-data)

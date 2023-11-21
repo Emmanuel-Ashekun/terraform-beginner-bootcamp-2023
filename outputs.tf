@@ -7,3 +7,7 @@ output "s3_website_endopint" {
     value = module.terrahouse_aws.website_endopint
     description = "S3 static website hosting endpoint"
 }
+
+output "content_version" {
+  value = var.content_version
+}
